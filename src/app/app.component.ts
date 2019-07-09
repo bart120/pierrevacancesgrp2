@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pierrevacancesgrp2';
+  title = 'Pierre & vacances';
+
+  user: any = {};
+
+  logout(): void {
+    this.user = null;
+  }
+
 }

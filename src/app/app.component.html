@@ -2,22 +2,22 @@
   <div>
     <!--<span [textContent]="title"></span>-->
     <span>{{title}}</span>
-    <a href="" mat-button>
+    <a routerLink="home" mat-button>
       <mat-icon class="mat-18">home</mat-icon>
       Accueil
     </a>
-    <a href="" mat-button>
+    <a routerLink="/rooms" mat-button>
       <mat-icon class="mat-18">room</mat-icon>
       Salles
     </a>
-    <a href="" mat-button>
+    <a [routerLink]="['/rooms/create']" mat-button>
       <mat-icon class="mat-18">add</mat-icon>
       Ajouter
     </a>
   </div>
   <div>
     <ng-container *ngIf="user == null;else log">
-      <a href="" mat-button>
+      <a [routerLink]="['/auth/login']" mat-button>
         <mat-icon class="mat-18">lock_open</mat-icon>
         Login
       </a>
@@ -36,6 +36,7 @@
   </div>
 </mat-toolbar>
 
+<router-outlet></router-outlet>
 
 <footer>
   <app-room-top-five></app-room-top-five>

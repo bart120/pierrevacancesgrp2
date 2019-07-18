@@ -1,0 +1,15 @@
+<h3>Authentification</h3>
+<form class="form" novalidate #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+    <mat-form-field>
+        <input [(ngModel)]="user.login" name="login" type="email" matInput placeholder="Login" required />
+        <mat-error>Login obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Mot de passe"
+            required />
+        <mat-error>Mot de passe obligatoire</mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-button type="submit">Se connecter</button>
+    </div>
+</form>

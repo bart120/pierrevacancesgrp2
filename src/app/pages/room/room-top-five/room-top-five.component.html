@@ -1,1 +1,12 @@
-<p>room-top-five works!</p>
+<h3>TOP {{rooms?.length}}</h3>
+
+<mat-grid-list cols="5">
+    <mat-grid-tile *ngFor="let room of rooms">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{room.name}}</mat-card-title>
+            </mat-card-header>
+            <img matCardImage src="/assets/images/{{room.image}}">
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

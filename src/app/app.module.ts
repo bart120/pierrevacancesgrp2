@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { HomeModule } from './pages/home/home.module';
 import { AuthenticationModule } from './pages/authentication/authentication.module';
+import { RoomService } from './services/room.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,9 +21,12 @@ import { AuthenticationModule } from './pages/authentication/authentication.modu
     MaterialModule,
     HomeModule,
     RoomModule,
-    AuthenticationModule
+    AuthenticationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //RoomService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomModel } from 'src/app/models/room.model';
+import { RoomService } from 'src/app/services/room.service';
 
 @Component({
   selector: 'app-room-top-five',
@@ -8,15 +9,21 @@ import { RoomModel } from 'src/app/models/room.model';
 })
 export class RoomTopFiveComponent implements OnInit {
 
-  rooms: Array<RoomModel> = [
-    { name: 'Calliope', image: 'Calliope.jpg' },
-    { name: 'Pegase', image: 'Pegase.jpg' },
-    { name: 'Thalie', image: 'Thalie.jpg' }
-  ];
+  // private servRoom: RoomService;
 
-  constructor() { }
+  rooms: Array<RoomModel>;
+
+  constructor(private serv: RoomService) {
+    // this.servRoom = serv;
+  }
 
   ngOnInit() {
+    this.serv.getTopFive().subscribe(
+      (data) => {
+        this.rooms = data;
+      }
+    );
+
   }
 
 }

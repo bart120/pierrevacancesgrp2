@@ -4,13 +4,14 @@ import { CreateRoomComponent } from './pages/room/create-room/create-room.compon
 import { DetailRoomComponent } from './pages/room/detail-room/detail-room.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { AuthenticationModule } from './pages/authentication/authentication.module';
+import { AuthGuard } from './guards/auth.guard';
 
 export const ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
     {
         path: 'rooms', children: [
             { path: '', component: ListRoomComponent },
-            { path: 'create', component: CreateRoomComponent },
+            { path: 'create', component: CreateRoomComponent, canActivate: [AuthGuard] },
             { path: 'detail/:id', component: DetailRoomComponent }
         ]
     },

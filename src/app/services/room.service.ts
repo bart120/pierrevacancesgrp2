@@ -42,4 +42,17 @@ export class RoomService {
     getRoomById(id: number): Observable<RoomModel> {
         return this.http.get<RoomModel>(`${environment.urlRooms}/${id}`);
     }
+
+    insert(room: RoomModel): Observable<RoomModel> {
+        return this.http.post<RoomModel>(environment.urlRooms, room);
+    }
+
+    update(room: RoomModel): Observable<RoomModel> {
+        return this.http.put<RoomModel>(environment.urlRooms, room);
+    }
+
+    delete(id: number): Observable<RoomModel> {
+        return this.http.delete<RoomModel>(`${environment.urlRooms}/${id}`);
+    }
+
 }

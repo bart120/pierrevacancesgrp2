@@ -6,6 +6,7 @@ import { CreateRoomComponent } from './create-room/create-room.component';
 import { DetailRoomComponent } from './detail-room/detail-room.component';
 import { ListRoomComponent } from './list-room/list-room.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     RoomTopFiveComponent

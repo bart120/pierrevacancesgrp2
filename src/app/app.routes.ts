@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ListRoomComponent } from './pages/room/list-room/list-room.component';
 import { CreateRoomComponent } from './pages/room/create-room/create-room.component';
 import { DetailRoomComponent } from './pages/room/detail-room/detail-room.component';

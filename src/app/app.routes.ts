@@ -12,7 +12,7 @@ export const ROUTES: Routes = [
         path: 'rooms', children: [
             { path: '', component: ListRoomComponent },
             { path: 'create', component: CreateRoomComponent },
-            { path: 'detail', component: DetailRoomComponent }
+            { path: 'detail/:id', component: DetailRoomComponent }
         ]
     },
     { path: 'auth', loadChildren: () => AuthenticationModule }
